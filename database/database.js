@@ -25,7 +25,7 @@ for (let i = 0; i < 100; i++) {
   } else {
     var randomCategory = product[Math.floor(Math.random() * 5)];
   }
-  const numberPhotos = Math.floor(Math.random() * 6);
+  const numberPhotos = Math.ceil(Math.random() * 5);
   for (let j = 0; j < numberPhotos; j++) {
     const randomNum = Math.floor(Math.random() * 30);
     const instanceData = {
