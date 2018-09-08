@@ -32,7 +32,7 @@ for (let i = 0; i < 100; i++) {
       id: i,
       image: `https://s3-us-west-1.amazonaws.com/vourcher/${randomCategory}/image-${randomNum}.jpg`
     };
-    const imageInstance = Images(instanceData);
+    const imageInstance = new Images(instanceData);
     imageInstance.save(err => {
       if (err) return console.log(err);
     });
@@ -47,7 +47,6 @@ const bannerSchema = new mongoose.Schema({
   deal: String
 });
 const Banners = mongoose.model('Banners', bannerSchema);
-const bannerInstance = Banners();
 
 for (let k = 0; k < 100; k++) {
   const randomRating = Math.floor(Math.random() * 6);
@@ -61,7 +60,7 @@ for (let k = 0; k < 100; k++) {
     address: randomAddress,
     deal: randomDeal
   };
-  const bannerInstance = Banners(instanceData);
+  const bannerInstance = new Banners(instanceData);
   bannerInstance.save(err => {
     if (err) return console.log(err);
   });
