@@ -7,9 +7,20 @@
   "engines": {
     "node": ">=6.13.0"
   },
-  "scripts": {},
-  "dependencies": {},
+  "scripts": {
+    "start": "webpack --config webpack.config.js"
+  },
+  "dependencies": {
+    "@babel/core": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "react": "^16.5.0",
+    "react-dom": "^16.5.0",
+    "webpack": "^4.17.2",
+    "webpack-cli": "^3.1.0"
+  },
   "devDependencies": {
+    "@babel/preset-env": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
     "eslint": "^5.5.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-hackreactor": "git://github.com/reactorcore/eslint-config-hackreactor",
