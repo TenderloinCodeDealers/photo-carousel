@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "webpack --config webpack.config.js",
-    "seed": "node database/database.js"
+    "seed": "node database/database.js",
+    "server": "nodemon index.js"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
@@ -20,7 +21,8 @@
     "webpack-cli": "^3.1.0",
     "faker": "^4.1.0",
     "mongodb": "^3.1.4",
-    "mongoose": "^5.2.13"
+    "mongoose": "^5.2.13",
+    "nodemon": "^1.18.4"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.0.0",
