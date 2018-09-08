@@ -8,12 +8,13 @@
     "node": ">=6.13.0"
   },
   "scripts": {
-    "start": "webpack --config webpack.config.js",
-    "seed": "node database/database.js",
-    "server": "nodemon ./server/index.js"
+    "start": "webpack --config webpack.config.js --watch",
+    "seed": "node database/seed.js",
+    "server": "node ./server/index.js"
   },
   "dependencies": {
     "@babel/core": "^7.0.0",
+    "axios": "^0.18.0",
     "babel-loader": "^8.0.2",
     "express": "^4.16.3",
     "faker": "^4.1.0",

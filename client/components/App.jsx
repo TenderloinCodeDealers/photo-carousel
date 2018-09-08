@@ -1,10 +1,10 @@
 import React from 'react';
-import Images from './Images.jsx';
+import ImagesList from './ImagesList.jsx';
 
 const App = props => (
   <div>
-    <div>Hello World!</div>
-    <Images />
+    <div>Hello World!!</div>
+    <ImagesList />
   </div>
 );
 
