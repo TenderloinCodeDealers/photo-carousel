@@ -10,7 +10,7 @@ module.exports = {
     rules: [
       {
         test: /\.jsx/,
-        exclude: [/node_modules/, /bundle.js/, /seed.js/],
+        exclude: [/node_modules/, /bundle.js/, /seed.js/, /test/],
         use: {
           loader: 'babel-loader'
         }
