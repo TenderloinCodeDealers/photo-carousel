@@ -67,10 +67,6 @@
       "node_modules",
       "bower_components",
       "shared"
-    ],
-    "moduleNameMapper": {
-      "^react(.*)$": "<rootDir>/vendor/react-master$1",
-      "^config$": "<rootDir>/configs/app-config.js"
-    }
+    ]
   }
 }
