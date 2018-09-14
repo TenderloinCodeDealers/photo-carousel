@@ -1,19 +1,20 @@
 const express = require('express');
+const path = require('path');
 const db = require('../database/database.js');
 
 const app = express();
 
-app.use(express.static('public'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => res.send('Hello World!'));
 
 app.get('/:id/api/images', (req, res) => {
-  console.log('serving GET');
   const id = req.params.id;
+  console.log(`serving GET for id ${id}`);
   db.findImage(id, data => {
     res.status(200);
     res.send(data);
   });
 });
 
-app.listen(3000, () => console.log('Listening on port 3000!'));
+app.listen(3001, () => console.log('Listening on port 3001!'));

@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
 import ImageEntry from './ImageEntry.jsx';
+import LeftArrow from './LeftArrow.jsx';
+import RightArrow from './RightArrow.jsx';
 
 class ImagesList extends React.Component {
   constructor(props) {
@@ -13,25 +15,39 @@ class ImagesList extends React.Component {
           image: 'https://s3-us-west-1.amazonaws.com/vourcher/restaurant+images/image-2.jpg',
           __v: 0
         }
-      ]
+      ],
+      index: 0
     };
   }
 
   componentDidMount() {
-    axios.get('http://localhost:3000/:id/api/images').then(results => {
+    axios.get('/:id/api/images').then(results => {
       this.setState({
         images: results.data
       });
     });
   }
 
+  handleLeftClick() {
+    this.setState(prevState => ({
+      index: prevState.index - 1
+    }));
+  }
+
+  handleRightClick() {
+    this.setState(prevState => ({
+      index: prevState.index + 1
+    }));
+  }
+
   render() {
     return (
       <div>
-        <div>images!!!</div>
         {this.state.images.map(image => (
           <ImageEntry key={image._id} image={image} />
         ))}
+        <LeftArrow handleLeftClick={this.handleLeftClick.bind(this)} />
+        <RightArrow handleRightClick={this.handleRightClick.bind(this)} />
       </div>
     );
   }

@@ -6,7 +6,7 @@ mongoose.connect(
 );
 
 const imageSchema = new mongoose.Schema({
-  id: { type: Number, unique: true },
+  id: Number,
   image: String
 });
 
