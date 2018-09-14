@@ -1,8 +1,8 @@
 import React from 'react';
 
 const LeftArrow = props => (
-  <div>
-    <i className="fas fa-chevron-circle-left" />
+  <div onClick={props.handleLeftClick}>
+    <i className="fas fa-chevron-circle-left fa-5x" />
   </div>
 );
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
 const RightArrow = props => (
-  <div>
-    <i className="fas fa-chevron-circle-right" />
+  <div onClick={props.handleRightClick}>
+    <i className="fas fa-chevron-circle-right fa-5x" />
   </div>
 );
 
