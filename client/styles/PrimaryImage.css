@@ -2,6 +2,14 @@
   width: 50%;
   z-index: 1;
 }
+
+.wrapper {
+  overflow: hidden;
+  height: 34vw;
+  min-width: 450px;
+  min-height: 250px;
+}
+
 .videoResponsive {
   overflow: hidden;
   padding-bottom: 56.25%;
@@ -11,6 +19,7 @@
   min-width: 450px;
   min-height: 250px;
 }
+
 .videoResponsive iframe {
   height: 50%;
   width: 100%;
