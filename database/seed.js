@@ -36,7 +36,7 @@ for (let i = 1; i <= 100; i++) {
       image: `https://s3-us-west-1.amazonaws.com/vourcher/${randomCategory}/image-${randomNum}.jpg`
     };
     if (j === 3) {
-      instanceData.image = 'https://www.youtube.com/embed/9N4Nd0Ct5yU';
+      instanceData.image = 'https://www.youtube.com/embed/9txxodYuZGc';
     }
     const imageInstance = new Images(instanceData);
     imageInstance.save(err => {
