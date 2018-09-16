@@ -1,17 +1,43 @@
 import React from 'react';
+import classNames from 'classnames';
+import { Spring, animated } from 'react-spring';
 import styles from '../styles/ImageEntry.css';
 
-const ImageEntry = props => (
-  <div
-    onClick={() => props.handlePreviewClick(props.index)}
-    className={props.primaryIndex === props.index ? styles.selected : styles.container}
-  >
-    {props.image.image.includes('youtube') ? (
-      <iframe width="100" height="56" src={props.image.image} frameBorder="0" allowFullScreen />
-    ) : (
-      <img src={props.image.image} alt={props.image.id} className={styles.preview} />
-    )}
-  </div>
-);
+const ImageEntry = props => {
+  const classPreview = classNames(styles.container, {
+    [styles.selected]: props.primaryIndex === props.index
+  });
+
+  const thumbnail = props.image.image.split('/')[4];
+  return (
+    <Spring
+      native
+      config={{ tension: 200, friction: 15 }}
+      overshootClamping
+      velocity={1}
+      from={{ outlineWidth: '0px' }}
+      to={{ outlineWidth: '3px' }}
+      reset
+    >
+      {springStyle => (
+        <animated.div
+          style={springStyle}
+          onClick={() => props.handlePreviewClick(props.index)}
+          className={classPreview}
+        >
+          {props.image.image.includes('youtube') ? (
+            <img
+              src={`https://img.youtube.com/vi/${thumbnail}/hqdefault.jpg`}
+              alt="thumbnail"
+              className={styles.preview}
+            />
+          ) : (
+            <img src={props.image.image} alt={props.image.id} className={styles.preview} />
+          )}
+        </animated.div>
+      )}
+    </Spring>
+  );
+};
 
 export default ImageEntry;

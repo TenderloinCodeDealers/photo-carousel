@@ -9,6 +9,7 @@ const PrimaryImage = props => (
           title="Sample embed video"
           width="50%"
           height="auto"
+          allow="autoplay; encrypted-media"
           src={props.image.image}
           frameBorder="0"
           allowFullScreen

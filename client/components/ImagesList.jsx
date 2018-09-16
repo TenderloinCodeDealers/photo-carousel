@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Transition, Spring, config, animated } from 'react-spring';
+import { Spring, animated } from 'react-spring';
 import ImageEntry from './ImageEntry.jsx';
 import LeftArrow from './LeftArrow.jsx';
 import RightArrow from './RightArrow.jsx';
@@ -80,7 +80,7 @@ class ImagesList extends React.Component {
         <div>
           <Spring
             native
-            config={config.slow}
+            config={{ tension: 280, friction: 90 }}
             from={{ filter: 'blur(3px)' }}
             to={{ filter: 'blur(0)' }}
             reset
@@ -94,20 +94,6 @@ class ImagesList extends React.Component {
               </animated.div>
             )}
           </Spring>
-          {/* <Transition
-          config={config.molasses}
-          from={{ position: 'absolute', opacity: 0 }}
-          enter={{ opacity: 1 }}
-          leave={{ opacity: 0 }}
-        >
-          {springStyle => (
-            <PrimaryImage
-              style={springStyle}
-              key={this.state.images[this.state.index]._id}
-              image={this.state.images[this.state.index]}
-            />
-          )}
-        </Transition> */}
           <LeftArrow handleLeftClick={this.handleLeftClick.bind(this)} />
           <RightArrow handleRightClick={this.handleRightClick.bind(this)} />
         </div>
@@ -117,7 +103,7 @@ class ImagesList extends React.Component {
               key={image._id}
               image={image}
               index={index}
-              primartIndex={this.state.index}
+              primaryIndex={this.state.index}
               handlePreviewClick={this.handlePreviewClick.bind(this)}
             />
           ))}

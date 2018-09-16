@@ -16,6 +16,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "babel-loader": "^8.0.2",
+    "classnames": "^2.2.6",
     "express": "^4.16.3",
     "faker": "^4.1.0",
     "mongodb": "^3.1.4",

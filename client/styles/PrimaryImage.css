@@ -8,6 +8,8 @@
   position: relative;
   width: 50%;
   height: 0;
+  min-width: 450px;
+  min-height: 250px;
 }
 .videoResponsive iframe {
   height: 50%;
