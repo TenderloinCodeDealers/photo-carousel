@@ -4,7 +4,16 @@ import styles from '../styles/PrimaryImage.css';
 const PrimaryImage = props => (
   <div>
     {props.image.image.includes('youtube') ? (
-      <iframe width="640" height="360" src={props.image.image} frameBorder="0" allowFullScreen />
+      <div className={styles.videoResponsive}>
+        <iframe
+          title="Sample embed video"
+          width="50%"
+          height="auto"
+          src={props.image.image}
+          frameBorder="0"
+          allowFullScreen
+        />
+      </div>
     ) : (
       <img src={props.image.image} alt={props.image.id} className={styles.current} />
     )}

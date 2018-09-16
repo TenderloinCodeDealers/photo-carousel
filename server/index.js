@@ -5,8 +5,7 @@ const db = require('../database/database.js');
 const app = express();
 
 app.use(express.static(path.join(__dirname, '../public')));
-
-app.get('/', (req, res) => res.send('Hello World!'));
+app.use('/:id', express.static(path.join(__dirname, '../public')));
 
 app.get('/:id/api/images', (req, res) => {
   const id = req.params.id;

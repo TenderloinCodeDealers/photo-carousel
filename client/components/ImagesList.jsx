@@ -1,5 +1,6 @@
 import React from 'react';
 import axios from 'axios';
+import { Transition, Spring, config, animated } from 'react-spring';
 import ImageEntry from './ImageEntry.jsx';
 import LeftArrow from './LeftArrow.jsx';
 import RightArrow from './RightArrow.jsx';
@@ -41,7 +42,8 @@ class ImagesList extends React.Component {
   }
 
   componentDidMount() {
-    axios.get('/:id/api/images').then(results => {
+    const id = window.location.pathname.split('/')[1];
+    axios.get(`/${id}/api/images`).then(results => {
       this.setState({
         images: results.data
       });
@@ -68,15 +70,56 @@ class ImagesList extends React.Component {
     }
   }
 
+  handlePreviewClick(index) {
+    this.setState({ index });
+  }
+
   render() {
     return (
-      <div>
-        <PrimaryImage image={this.state.images[this.state.index]} />
-        <LeftArrow handleLeftClick={this.handleLeftClick.bind(this)} />
-        <RightArrow handleRightClick={this.handleRightClick.bind(this)} />
-        <div className={styles.container}>
-          {this.state.images.map(image => (
-            <ImageEntry key={image._id} image={image} />
+      <div className={styles.container}>
+        <div>
+          <Spring
+            native
+            config={config.slow}
+            from={{ filter: 'blur(3px)' }}
+            to={{ filter: 'blur(0)' }}
+            reset
+          >
+            {springStyle => (
+              <animated.div style={springStyle}>
+                <PrimaryImage
+                  key={this.state.images[this.state.index]._id}
+                  image={this.state.images[this.state.index]}
+                />
+              </animated.div>
+            )}
+          </Spring>
+          {/* <Transition
+          config={config.molasses}
+          from={{ position: 'absolute', opacity: 0 }}
+          enter={{ opacity: 1 }}
+          leave={{ opacity: 0 }}
+        >
+          {springStyle => (
+            <PrimaryImage
+              style={springStyle}
+              key={this.state.images[this.state.index]._id}
+              image={this.state.images[this.state.index]}
+            />
+          )}
+        </Transition> */}
+          <LeftArrow handleLeftClick={this.handleLeftClick.bind(this)} />
+          <RightArrow handleRightClick={this.handleRightClick.bind(this)} />
+        </div>
+        <div className={styles.preview}>
+          {this.state.images.map((image, index) => (
+            <ImageEntry
+              key={image._id}
+              image={image}
+              index={index}
+              primartIndex={this.state.index}
+              handlePreviewClick={this.handlePreviewClick.bind(this)}
+            />
           ))}
         </div>
       </div>

@@ -1,3 +1,24 @@
+.container {
+  border: 1px solid #fff;
+  width: 70px;
+  overflow: hidden;
+  margin: 4px;
+  position: relative;
+}
+
+.selected {
+  border: 1px solid #fff;
+  width: 60px;
+  outline: 3px solid #53a318;
+  overflow: hidden;
+  margin: 2px;
+  position: relative;
+}
+
 .preview {
   width: 100px;
+  margin: 0 5px;
+  position: absolute;
+  left: -10%;
+  top: 3%;
 }
