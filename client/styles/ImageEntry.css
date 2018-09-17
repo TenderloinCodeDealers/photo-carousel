@@ -18,3 +18,21 @@
   left: -10%;
   top: 3%;
 }
+
+.circle {
+  height: 35px;
+  width: 35px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+  position: absolute;
+  top: 20%;
+  left: 25%;
+}
+
+.camera {
+  color: white;
+  position: absolute;
+  top: 25%;
+  left: 25%;
+}

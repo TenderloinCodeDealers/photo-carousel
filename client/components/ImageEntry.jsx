@@ -8,6 +8,8 @@ const ImageEntry = props => {
     [styles.selected]: props.primaryIndex === props.index
   });
 
+  const classCamera = classNames('fas fa-video', [styles.camera]);
+
   const thumbnail = props.image.image.split('/')[4];
   return (
     <Spring
@@ -26,11 +28,16 @@ const ImageEntry = props => {
           className={classPreview}
         >
           {props.image.image.includes('youtube') ? (
-            <img
-              src={`https://img.youtube.com/vi/${thumbnail}/hqdefault.jpg`}
-              alt="thumbnail"
-              className={styles.preview}
-            />
+            <div>
+              <img
+                src={`https://img.youtube.com/vi/${thumbnail}/hqdefault.jpg`}
+                alt="thumbnail"
+                className={styles.preview}
+              />
+              <span className={styles.circle}>
+                <i className={classCamera} />
+              </span>
+            </div>
           ) : (
             <img src={props.image.image} alt={props.image.id} className={styles.preview} />
           )}
