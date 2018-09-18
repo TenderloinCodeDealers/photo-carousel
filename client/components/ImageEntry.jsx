@@ -2,13 +2,13 @@ import React from 'react';
 import classNames from 'classnames';
 import { Spring, animated } from 'react-spring';
 import styles from '../styles/ImageEntry.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faVideo } from '@fortawesome/free-solid-svg-icons';
 
 const ImageEntry = props => {
   const classPreview = classNames(styles.container, {
     [styles.selected]: props.primaryIndex === props.index
   });
-
-  const classCamera = classNames('fas fa-video', [styles.camera]);
 
   const thumbnail = props.image.image.split('/')[4];
   return (
@@ -35,7 +35,7 @@ const ImageEntry = props => {
                 className={styles.preview}
               />
               <span className={styles.circle}>
-                <i className={classCamera} />
+                <FontAwesomeIcon icon={faVideo} className={styles.camera} />
               </span>
             </div>
           ) : (
