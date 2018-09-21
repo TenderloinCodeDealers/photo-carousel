@@ -9,6 +9,7 @@
   },
   "scripts": {
     "start": "webpack --config webpack.config.js -d --watch",
+    "start-prod": "webpack --config webpack.prod.js",
     "seed": "node database/seed.js",
     "server": "node ./server/index.js",
     "test": "jest"
@@ -51,6 +52,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-prettier": "^2.6.2",
     "eslint-plugin-react": "^7.11.1",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^23.6.0",
     "prettier": "^1.14.2",
     "puppeteer": "^1.8.0",
@@ -59,14 +61,18 @@
   "jest": {
     "collectCoverage": true,
     "collectCoverageFrom": [
-      "**/*.{js,jsx}",
+      "**/client/components/*.{js,jsx}",
       "!**/node_modules/**",
+      "!**/coverage/**",
       "!**/vendor/**",
       "!**/seed.js/**",
       "!**/bundle.js/**",
       "!**/*.config.js/**",
       "!**/test/**"
     ],
+    "moduleNameMapper": {
+      "\\.(css|less)$": "identity-obj-proxy"
+    },
     "modulePaths": [
       "/shared/vendor/modules"
     ],
