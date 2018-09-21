@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  'mongodb://localhost/vourcher',
+  'mongodb://172.17.0.2/vourcher',
   { useNewUrlParser: true }
 );
 
