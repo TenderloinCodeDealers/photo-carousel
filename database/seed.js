@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const Faker = require('faker');
 
 mongoose.connect(
-  'mongodb://localhost/vourcher',
+  'mongodb://172.17.0.2/vourcher',
   { useNewUrlParser: true }
 );
 
@@ -40,7 +40,9 @@ for (let i = 1; i <= 100; i++) {
     }
     const imageInstance = new Images(instanceData);
     imageInstance.save(err => {
-      if (err) return console.log(err);
+      if (err) {
+        return console.log(err);
+      }
     });
   }
 }
@@ -68,7 +70,9 @@ for (let k = 1; k <= 100; k++) {
   };
   const bannerInstance = new Banners(instanceData);
   bannerInstance.save(err => {
-    if (err) return console.log(err);
+    if (err) {
+      return console.log(err);
+    }
   });
 }
 

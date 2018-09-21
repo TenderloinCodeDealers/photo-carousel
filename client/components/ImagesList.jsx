@@ -43,7 +43,7 @@ class ImagesList extends React.Component {
 
   componentDidMount() {
     const id = window.location.pathname.split('/')[1];
-    axios.get(`/${id}/api/images`).then(results => {
+    axios.get(`http://54.183.146.159/${id}/api/images`).then(results => {
       this.setState({
         images: results.data
       });
