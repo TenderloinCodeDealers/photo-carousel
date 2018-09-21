@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "webpack --config webpack.config.js -d --watch",
-    "build": "webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.config.js",
     "seed": "node database/seed.js",
     "server": "node ./server/index.js",
     "test": "jest"
