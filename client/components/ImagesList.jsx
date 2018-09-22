@@ -11,32 +11,7 @@ class ImagesList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      images: [
-        {
-          _id: '5b9b29456e90510457754554',
-          id: 22,
-          image: 'https://s3-us-west-1.amazonaws.com/vourcher/food+images/image-17.jpg',
-          __v: 0
-        },
-        {
-          _id: '5b9b29456e90510457754556',
-          id: 22,
-          image: 'https://s3-us-west-1.amazonaws.com/vourcher/food+images/image-18.jpg',
-          __v: 0
-        },
-        {
-          _id: '5b9b29456e90510457754555',
-          id: 22,
-          image: 'https://s3-us-west-1.amazonaws.com/vourcher/food+images/image-19.jpg',
-          __v: 0
-        },
-        {
-          _id: '5b9b29456e90510457754557',
-          id: 22,
-          image: 'https://www.youtube.com/embed/9N4Nd0Ct5yU',
-          __v: 0
-        }
-      ],
+      images: [],
       index: 0
     };
   }
