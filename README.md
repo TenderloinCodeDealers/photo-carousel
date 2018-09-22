@@ -1,10 +1,9 @@
-# Vourcher
+# Vourcher Carousel Service
 
-> A carousel microservice modeled after Groupon's product pages.
+A carousel microservice modeled after Groupon's product pages. Serves static images as well as embedded videos. Can be used in conjunction with [Vourcher Proxy Server](https://github.com/TenderloinCodeDealers/chii-proxy).
 
 ## Table of Contents
 
-1. [Usage](#Usage)
 1. [Prerequisites](#prerequisites)
 1. [Installing Dependencies](#installing-dependencies)
 1. [Development](#development)
@@ -19,8 +18,7 @@
 
 ### Prerequisites
 
-This assumes you are using [npm](https://www.npmjs.com/) as your package manager.
-[Mongodb](https://www.mongodb.com/) is used as the database for this module.
+> This assumes you are using [npm](https://www.npmjs.com/) as your package manager. [Mongodb](https://www.mongodb.com/) is used as the database for this module.
 An `nvmrc` file is included if using [nvm](https://github.com/creationix/nvm).
 
 - Node 6.13.0
@@ -51,9 +49,9 @@ To start the server run
 ```
 npm start
 ```
-To see Vourcher Proxy Server in action, in a browser visit:
+To see Vourcher Carousel in action, use a browser and visit:
 ```
-http://localhost:3000/<NUMBER_FROM_1_TO_100>
+http://localhost:3001/<NUMBER_FROM_1_TO_100>
 ```
 
 ## Authors
